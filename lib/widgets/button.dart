@@ -47,13 +47,13 @@ class _ButtonState extends State<Button> {
             borderRadius: BorderRadius.circular(28),
             boxShadow: _isElevated == true
                 ? [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0xff00ffba),
                       offset: Offset(2, 2),
                       blurRadius: 10,
                       spreadRadius: 0.5,
                     ),
-                    BoxShadow(
+                    const BoxShadow(
                       color: Colors.black,
                       offset: Offset(-4, -4),
                       blurRadius: 10,

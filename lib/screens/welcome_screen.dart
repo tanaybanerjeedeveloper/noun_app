@@ -34,41 +34,38 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             fit: BoxFit.cover,
           ),
         ),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-          child: Container(
-            decoration: BoxDecoration(color: Colors.transparent),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/logo.png',
-                    height: 150,
-                    fit: BoxFit.cover,
-                  ),
-                  const SizedBox(
-                    height: 45.0,
-                  ),
-                  Button('LOGIN', () {
-                    Timer(const Duration(milliseconds: 1500),
-                        () => Navigator.pushNamed(context, LoginScreen.id));
-                  }
+        child: Container(
+          decoration: BoxDecoration(color: Colors.transparent),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  'assets/images/logo.png',
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(
+                  height: 45.0,
+                ),
+                Button('LOGIN', () {
+                  Timer(const Duration(milliseconds: 1000),
+                      () => Navigator.pushNamed(context, LoginScreen.id));
+                }
 
-                      // () => Navigator.pushNamed(context, LoginScreen.id)
-                      ),
-                  const SizedBox(
-                    height: 45.0,
-                  ),
-                  Button(
-                    'SIGNUP',
-                    () {
-                      Timer(const Duration(milliseconds: 1500),
-                          () => Navigator.pushNamed(context, SignupScreen.id));
-                    },
-                  ),
-                ],
-              ),
+                    // () => Navigator.pushNamed(context, LoginScreen.id)
+                    ),
+                const SizedBox(
+                  height: 45.0,
+                ),
+                Button(
+                  'SIGNUP',
+                  () {
+                    Timer(const Duration(milliseconds: 1000),
+                        () => Navigator.pushNamed(context, SignupScreen.id));
+                  },
+                ),
+              ],
             ),
           ),
         ),
