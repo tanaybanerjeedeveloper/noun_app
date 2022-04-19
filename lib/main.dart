@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/welcome_screen.dart';
 import './screens/signup_screen.dart';
+import './screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SignupScreen.id: (context) => SignupScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
       },
       debugShowCheckedModeBanner: false,
     );

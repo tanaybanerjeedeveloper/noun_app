@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
 import 'signup_screen.dart';
+import 'login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   //const WelcomeScreen({Key? key, required this.title}) : super(key: key);
@@ -48,12 +50,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(
                     height: 45.0,
                   ),
-                  Button('LOGIN', () {}),
+                  Button('LOGIN', () {
+                    Timer(const Duration(milliseconds: 1500),
+                        () => Navigator.pushNamed(context, LoginScreen.id));
+                  }
+
+                      // () => Navigator.pushNamed(context, LoginScreen.id)
+                      ),
                   const SizedBox(
                     height: 45.0,
                   ),
-                  Button('SIGNUP',
-                      () => Navigator.pushNamed(context, SignupScreen.id)),
+                  Button(
+                    'SIGNUP',
+                    () {
+                      Timer(const Duration(milliseconds: 1500),
+                          () => Navigator.pushNamed(context, SignupScreen.id));
+                    },
+                  ),
                 ],
               ),
             ),

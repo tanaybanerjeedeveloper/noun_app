@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class Button extends StatefulWidget {
@@ -18,7 +20,15 @@ class _ButtonState extends State<Button> {
   Widget build(BuildContext context) {
     return Listener(
       onPointerUp: (_) => setState(() => _isElevated = true),
-      onPointerDown: (_) => setState(() => _isElevated = false),
+      onPointerDown: (_) {
+        setState(() {
+          _isElevated = false;
+
+          //_isElevated = false;
+        });
+        widget.onPressed();
+        // Timer(const Duration(milliseconds: 10000), widget.onPressed());
+      },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 250),
         width: MediaQuery.of(context).size.width * 0.60,
