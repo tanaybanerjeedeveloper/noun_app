@@ -12,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   var _isElevated = true;
+  var _checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,17 +59,53 @@ class _LoginScreenState extends State<LoginScreen> {
                       kTextFieldDecoration.copyWith(hintText: 'Phone/Email'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 55.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SmallButton('assets/images/fb.png'),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
-                  SmallButton('assets/images/gmail.png')
+                  SmallButton('assets/images/gmail.png'),
+                ],
+              ),
+              const SizedBox(
+                height: 55.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Checkbox(
+                      value: _checkBoxValue,
+                      onChanged: (value) {
+                        setState(() {
+                          _checkBoxValue = value!;
+                        });
+                      },
+                    ),
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                        color: Color(0xff1f1f1f),
+                        borderRadius: BorderRadius.circular(50),
+                        boxShadow: [
+                          const BoxShadow(
+                            color: Color(0xff00ffba),
+                            offset: Offset(2, 2),
+                            blurRadius: 10,
+                            spreadRadius: 0.5,
+                          ),
+                          const BoxShadow(
+                            color: Colors.black,
+                            offset: Offset(-4, -4),
+                            blurRadius: 10,
+                          )
+                        ]),
+                  )
                 ],
               )
             ],
