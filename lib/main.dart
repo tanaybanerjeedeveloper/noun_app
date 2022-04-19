@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './screens/welcome_screen.dart';
+import './screens/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
-          // primarySwatch: Colors.blue,
-          ),
-      home: const WelcomeScreen(title: 'Flutter Demo Home Page'),
+        // primarySwatch: Colors.blue,
+        primaryColor: Color(0xff00ffba),
+      ),
+      home: WelcomeScreen(),
+      routes: {
+        SignupScreen.id: (context) => SignupScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }

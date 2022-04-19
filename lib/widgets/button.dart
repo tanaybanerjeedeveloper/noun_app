@@ -1,52 +1,55 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
+class Button extends StatefulWidget {
   // const Button({Key? key}) : super(key: key);
   final String text;
+  final Function onPressed;
 
-  Button(this.text);
+  Button(this.text, this.onPressed);
+
+  @override
+  State<Button> createState() => _ButtonState();
+}
+
+class _ButtonState extends State<Button> {
+  var _isElevated = true;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: const [
-            BoxShadow(
-              blurRadius: 20.0,
-              offset: Offset(0, 0),
-              color: Color(0xff00ffba),
+    return Listener(
+      onPointerUp: (_) => setState(() => _isElevated = true),
+      onPointerDown: (_) => setState(() => _isElevated = false),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 250),
+        width: MediaQuery.of(context).size.width * 0.60,
+        height: MediaQuery.of(context).size.height * 0.065,
+        child: Center(
+          child: Text(
+            widget.text,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
-            BoxShadow(
-              blurRadius: 30.0,
-              offset: Offset(-15, -15),
-              color: Colors.black,
-            ),
-            BoxShadow(
-              blurRadius: 5.0,
-              offset: Offset(-1, -1),
-              color: Colors.black,
-            )
-          ]),
-      child: InkWell(
-        onTap: () {},
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.60,
-          height: MediaQuery.of(context).size.height * 0.065,
-          child: Center(
-            child: Text(
-              text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          decoration: BoxDecoration(
-            color: const Color(0xff1f1f1f),
-            borderRadius: BorderRadius.circular(28),
           ),
         ),
+        decoration: BoxDecoration(
+            color: const Color(0xff1f1f1f),
+            borderRadius: BorderRadius.circular(28),
+            boxShadow: _isElevated == true
+                ? [
+                    BoxShadow(
+                      color: Color(0xff00ffba),
+                      offset: Offset(2, 2),
+                      blurRadius: 10,
+                      spreadRadius: 0.5,
+                    ),
+                    BoxShadow(
+                      color: Colors.black,
+                      offset: Offset(-4, -4),
+                      blurRadius: 10,
+                    )
+                  ]
+                : null),
       ),
     );
   }
