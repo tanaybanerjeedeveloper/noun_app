@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/3rd_party_login_btn.dart';
+import '../widgets/button.dart';
 
 class LoginScreen extends StatefulWidget {
   //LoginScreen({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const BoxShadow(
                         color: Color(0xff00ffba),
                         offset: Offset(2, 2),
-                        blurRadius: 13,
+                        blurRadius: 10,
                         spreadRadius: 0.2),
                     const BoxShadow(
                       color: Colors.black,
@@ -79,13 +80,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    child: Checkbox(
-                      value: _checkBoxValue,
-                      onChanged: (value) {
-                        setState(() {
-                          _checkBoxValue = value!;
-                        });
-                      },
+                    child: Theme(
+                      child: Checkbox(
+                        value: _checkBoxValue,
+                        shape: CircleBorder(),
+                        activeColor: Color(0xff00ffba),
+                        onChanged: (value) {
+                          setState(() {
+                            _checkBoxValue = value!;
+                          });
+                        },
+                      ),
+                      data: ThemeData(unselectedWidgetColor: Color(0xff1f1f1f)),
                     ),
                     height: 20,
                     width: 20,
@@ -105,9 +111,35 @@ class _LoginScreenState extends State<LoginScreen> {
                             blurRadius: 10,
                           )
                         ]),
+                  ),
+                  SizedBox(width: 10.0),
+                  Text(
+                    'Terms and Condition',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w800, fontSize: 14.0),
                   )
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 75.0,
+              ),
+              Button('LOGIN', () {}),
+              const SizedBox(
+                height: 35.0,
+              ),
+              RichText(
+                text: TextSpan(
+                  text: 'Dont Have an account? ',
+                  //style: DefaultTextStyle.of(context).style,
+                  children: const <TextSpan>[
+                    TextSpan(
+                      text: 'Login',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.red),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

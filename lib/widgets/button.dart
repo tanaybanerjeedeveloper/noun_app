@@ -31,8 +31,8 @@ class _ButtonState extends State<Button> {
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 250),
-        width: MediaQuery.of(context).size.width * 0.60,
-        height: MediaQuery.of(context).size.height * 0.065,
+        width: MediaQuery.of(context).size.width * 0.55,
+        height: MediaQuery.of(context).size.height * 0.045,
         child: Center(
           child: Text(
             widget.text,
