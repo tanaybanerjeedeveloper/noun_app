@@ -33,14 +33,14 @@ class IntroScreen extends StatelessWidget {
           children: [
             Image.asset(
               heroImg,
-              height: 150,
+              height: mediaQuery.height * 0.2,
             ),
             SizedBox(
               height: mediaQuery.height * 0.10,
             ),
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
             ),
             SizedBox(
               height: mediaQuery.height * 0.05,

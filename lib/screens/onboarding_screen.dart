@@ -20,6 +20,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -46,8 +47,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   title: 'Lorem ipsum'),
             ],
           ),
-          Center(
-            child: SmoothPageIndicator(controller: controller, count: 3),
+          Positioned(
+            top: mediaQuery.size.height * 0.45,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  dotColor: Colors.white,
+                  dotHeight: 9.0,
+                  dotWidth: 9.0,
+                  activeDotColor: Theme.of(context).primaryColor,
+                ),
+              ),
+            ),
           )
         ],
       ),
