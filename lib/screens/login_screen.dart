@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/3rd_party_login_btn.dart';
 import '../widgets/button.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   //LoginScreen({Key? key}) : super(key: key);
@@ -128,7 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 75.0,
                 ),
-                Button('LOGIN', () {}),
+                Button('LOGIN', () {
+                  Navigator.pushNamed(context, HomeScreen.id);
+                }),
                 const SizedBox(
                   height: 35.0,
                 ),

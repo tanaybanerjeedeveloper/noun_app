@@ -3,6 +3,7 @@ import './screens/welcome_screen.dart';
 import './screens/signup_screen.dart';
 import './screens/login_screen.dart';
 import './screens/onboarding_screen.dart';
+import './screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         SignupScreen.id: (context) => SignupScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kScaffoldBackgroundColor = Color(0xff11131b);
+
 const kTextFieldDecoration = InputDecoration(
   filled: true,
   fillColor: const Color(0xff1f1f1f),
