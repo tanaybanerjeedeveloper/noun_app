@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../utilities/constants.dart';
@@ -39,11 +41,45 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 CarouselWidget(
-                    mediaQuery: mediaQuery, text: 'Stations Near Me'),
+                    mediaQuery: mediaQuery,
+                    text: 'Stations Near Me',
+                    isVideo: false),
                 SizedBox(
                   height: mediaQuery.size.height * 0.05,
                 ),
-                CarouselWidget(mediaQuery: mediaQuery, text: 'Favourite'),
+                CarouselWidget(
+                    mediaQuery: mediaQuery, text: 'Favourite', isVideo: false),
+                SizedBox(
+                  height: mediaQuery.size.height * 0.05,
+                ),
+                Container(
+                  height: mediaQuery.size.height * 0.2,
+                  width: double.infinity,
+                  // padding: EdgeInsets.symmetric(vertical: 0, horizontal: .0),
+                  decoration: const BoxDecoration(
+                    //color: Colors.amber,
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/offer.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '30% OFF On First Charge',
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: mediaQuery.size.height * 0.05,
+                ),
+                CarouselWidget(
+                    mediaQuery: mediaQuery, text: 'Video', isVideo: true),
+                SizedBox(
+                  height: mediaQuery.size.height * 0.2,
+                ),
               ],
             ),
           ),

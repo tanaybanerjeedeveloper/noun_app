@@ -73,6 +73,10 @@ flutter:
     - assets/images/tree.png
     - assets/images/distance.png
     - assets/images/Group 892.png
+    - assets/images/offer.png
+    - assets/images/Rectangle 1342.png
+    - assets/images/Rectangle 1345.png
+    - assets/images/Rectangle 1346.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
