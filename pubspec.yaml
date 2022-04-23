@@ -36,6 +36,7 @@ dependencies:
   flutter_inset_box_shadow: ^1.0.8
   smooth_page_indicator: ^1.0.0+2
   carousel_slider: ^4.0.0
+  curved_navigation_bar: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +78,11 @@ flutter:
     - assets/images/Rectangle 1342.png
     - assets/images/Rectangle 1345.png
     - assets/images/Rectangle 1346.png
+    - assets/images/noti.png
+    - assets/images/home.png
+    - assets/images/reserved.png
+    - assets/images/calender.png
+    - assets/images/gallery.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

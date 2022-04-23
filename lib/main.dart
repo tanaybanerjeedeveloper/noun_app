@@ -4,6 +4,7 @@ import './screens/signup_screen.dart';
 import './screens/login_screen.dart';
 import './screens/onboarding_screen.dart';
 import './screens/home_screen.dart';
+import './widgets/bottom_navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         // primarySwatch: Colors.blue,
         primaryColor: Color(0xff00ffba),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: const Color(0xff1f1f1f),
+        ),
       ),
       home: OnboardingScreen(),
       routes: {
@@ -27,6 +31,7 @@ class MyApp extends StatelessWidget {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         HomeScreen.id: (context) => HomeScreen(),
+        BottomNavigation.id: (context) => BottomNavigation(),
       },
       debugShowCheckedModeBanner: false,
     );
