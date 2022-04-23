@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/button.dart';
 
 class CarouselItem extends StatelessWidget {
   //const CarouselItem({Key? key}) : super(key: key);
@@ -9,23 +10,24 @@ class CarouselItem extends StatelessWidget {
       // width: 500,
       margin: EdgeInsets.symmetric(horizontal: 2.0, vertical: 20.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
-          color: Color(0xff1f1f1f),
-          //color: Colors.blue,
-          boxShadow: [
-            const BoxShadow(
-              color: Color(0xff00ffba),
-              offset: Offset(0, 0),
-              blurRadius: 10,
-              spreadRadius: 0.5,
-            ),
-            const BoxShadow(
-              color: Colors.black,
-              offset: Offset(-4, -4),
-              blurRadius: 10,
-            )
-          ]),
-      child: Column(
+        borderRadius: BorderRadius.circular(15.0),
+        color: Color(0xff1f1f1f),
+        //color: Colors.blue,
+        boxShadow: [
+          const BoxShadow(
+            color: Color(0xff00ffba),
+            offset: Offset(0, 0),
+            blurRadius: 10,
+            spreadRadius: 0.5,
+          ),
+          const BoxShadow(
+            color: Colors.black,
+            offset: Offset(-4, -4),
+            blurRadius: 10,
+          )
+        ],
+      ),
+      child: ListView(
         children: [
           Row(
             children: [
@@ -33,7 +35,7 @@ class CarouselItem extends StatelessWidget {
                 flex: 3,
                 child: Container(
                   //color: Colors.amber,
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,25 +202,23 @@ class CarouselItem extends StatelessWidget {
                   flex: 1,
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 10.0,
-                      ),
+                      // SizedBox(
+                      //   height: 5.0,
+                      // ),
                       Container(
-                        color: Colors.amber,
+                        // color: Colors.amber,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               height: MediaQuery.of(context).size.height * 0.09,
                               width: MediaQuery.of(context).size.width * 0.25,
-                              color: Colors.red,
+                              // color: Colors.red,
                               padding: EdgeInsets.only(
                                 top: 20.0,
+                                right: 5.0,
                               ),
-                              child: ElevatedButton(
-                                child: Text('book'),
-                                onPressed: () {},
-                              ),
+                              child: Button('BOOK', () {}),
                             ),
                           ],
                         ),

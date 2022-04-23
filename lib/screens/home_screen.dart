@@ -1,8 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../utilities/constants.dart';
-import '../widgets/carousel_item.dart';
+import '../widgets/carousel_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   //HomeScreen({Key? key}) : super(key: key);
@@ -35,31 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         body: SingleChildScrollView(
           child: Container(
+            // color: Colors.amber,
             padding: EdgeInsets.only(top: 35.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                  child: Text(
-                    'Stations Near Me',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
-                  ),
-                ),
+                CarouselWidget(
+                    mediaQuery: mediaQuery, text: 'Stations Near Me'),
                 SizedBox(
-                  height: 15.0,
+                  height: mediaQuery.size.height * 0.05,
                 ),
-                CarouselSlider.builder(
-                    itemCount: 3,
-                    itemBuilder: (context, index, realIndex) {
-                      return CarouselItem();
-                    },
-                    options: CarouselOptions(
-                      height: mediaQuery.size.height * 0.38,
-                      enlargeCenterPage: true,
-                    ))
+                CarouselWidget(mediaQuery: mediaQuery, text: 'Favourite'),
               ],
             ),
           ),
