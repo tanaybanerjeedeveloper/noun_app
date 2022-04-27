@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/3rd_party_login_btn.dart';
@@ -131,7 +133,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 75.0,
                 ),
                 Button('LOGIN', () {
-                  Navigator.pushNamed(context, BottomNavigation.id);
+                  // Navigator.pushNamed(context, BottomNavigation.id);
+                  Timer(const Duration(milliseconds: 500),
+                      () => Navigator.pushNamed(context, BottomNavigation.id));
                 }),
                 const SizedBox(
                   height: 35.0,

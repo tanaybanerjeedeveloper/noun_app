@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
+import '../screens/station_details_screen.dart';
 
 class CarouselItem extends StatelessWidget {
   //const CarouselItem({Key? key}) : super(key: key);
@@ -218,7 +221,17 @@ class CarouselItem extends StatelessWidget {
                                 top: 20.0,
                                 right: 5.0,
                               ),
-                              child: Button('BOOK', () {}),
+                              child: Button(
+                                'BOOK',
+                                () {
+                                  Timer(
+                                      const Duration(milliseconds: 500),
+                                      () => Navigator.pushNamed(
+                                            context,
+                                            StationDetailsScreen.id,
+                                          ));
+                                },
+                              ),
                             ),
                           ],
                         ),

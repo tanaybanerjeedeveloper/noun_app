@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.grey[800],
             expandedHeight: mediaQuery.size.height * 0.6,
             leading: Icon(
               Icons.gps_fixed,

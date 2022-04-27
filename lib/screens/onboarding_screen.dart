@@ -34,14 +34,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend, quam sed euismod vulputate, augue velit gravida purus, quis euismod velit risus at feli',
                   heroImg: 'assets/images/Group 1967.png',
                   title: 'Lorem ipsum',
-                  onPressed: () {}),
+                  onPressed: () {
+                    controller.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut);
+                  }),
               IntroScreen(
                 backgroundImg: 'assets/images/background.png',
                 description:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend, quam sed euismod vulputate, augue velit gravida purus, quis euismod velit risus at feli',
                 heroImg: 'assets/images/EV 3.png',
                 title: 'Lorem ipsum',
-                onPressed: () {},
+                onPressed: () {
+                  controller.nextPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut);
+                },
               ),
               IntroScreen(
                   backgroundImg: 'assets/images/background.png',
