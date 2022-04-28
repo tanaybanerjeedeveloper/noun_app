@@ -5,23 +5,33 @@ class SmallConatiner extends StatelessWidget {
   //const SmallConatiner({Key? key}) : super(key: key);
   final String text;
   final String imgpath;
-  SmallConatiner({required this.text, required this.imgpath});
+  final Color color;
+  final bool forContainerForBookAndPay;
+  SmallConatiner(
+      {required this.text,
+      required this.imgpath,
+      required this.color,
+      required this.forContainerForBookAndPay});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
       decoration: BoxDecoration(
-          color: kScaffoldBackgroundColor,
+          color: color,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-              color: Color(0xff1b1e2b),
+              color: (forContainerForBookAndPay == false)
+                  ? Color(0xff1b1e2b)
+                  : Color(0xff242424),
               offset: Offset(-5, -5),
               blurRadius: 5,
             ),
             BoxShadow(
-              color: Color(0xff07080b),
+              color: (forContainerForBookAndPay == false)
+                  ? Color(0xff07080b)
+                  : Color(0xff1a1a1a),
               offset: Offset(5, 5),
               blurRadius: 5,
             ),

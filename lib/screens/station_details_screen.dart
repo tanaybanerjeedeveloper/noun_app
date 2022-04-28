@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/small_container.dart';
-import '../widgets/btn_screen_details.dart';
+import 'booking_screen.dart';
 
 class StationDetailsScreen extends StatefulWidget {
   //const StationDetailsScreen({Key? key}) : super(key: key);
@@ -13,6 +13,7 @@ class StationDetailsScreen extends StatefulWidget {
 
 class _StationDetailsScreenState extends State<StationDetailsScreen> {
   var _isElevated = true;
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -101,14 +102,20 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                                 // mainAxisAlignment: MainAxisAlignment.,
                                 children: [
                                   SmallConatiner(
-                                      text: 'Cafe',
-                                      imgpath: 'assets/images/Group 1621.png'),
+                                    text: 'Cafe',
+                                    imgpath: 'assets/images/Group 1621.png',
+                                    color: kScaffoldBackgroundColor,
+                                    forContainerForBookAndPay: false,
+                                  ),
                                   SizedBox(
                                     width: 10.0,
                                   ),
                                   SmallConatiner(
-                                      text: 'Park',
-                                      imgpath: 'assets/images/tree.png'),
+                                    text: 'Park',
+                                    imgpath: 'assets/images/tree.png',
+                                    color: kScaffoldBackgroundColor,
+                                    forContainerForBookAndPay: false,
+                                  ),
                                 ],
                               ),
                               SizedBox(
@@ -176,13 +183,6 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                           ),
                         ),
                       ),
-                      // Flexible(
-                      //   flex: 2,
-                      //   child: Container(
-                      //     height: 30.0,
-                      //     color: Colors.blue,
-                      //   ),
-                      // ),
                       Expanded(
                         flex: 2,
                         child: Container(
@@ -196,21 +196,47 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                               ),
                               //Button('Location', () {})
                               Listener(
-                                  onPointerUp: (_) =>
-                                      setState(() => _isElevated = true),
-                                  onPointerDown: (_) {
-                                    setState(() {
-                                      _isElevated = false;
+                                onPointerUp: (_) =>
+                                    setState(() => _isElevated = true),
+                                onPointerDown: (_) {
+                                  setState(() {
+                                    _isElevated = false;
 
-                                      //_isElevated = false;
-                                    });
-                                    () {};
-                                    // Timer(const Duration(milliseconds: 10000), widget.onPressed());
-                                  },
-                                  child: StationDetailsScreenButton(
-                                    onPressed: () {},
-                                    text: 'Locate',
-                                  ))
+                                    //_isElevated = false;
+                                  });
+                                  () {};
+                                  // Timer(const Duration(milliseconds: 10000), widget.onPressed());
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 250),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 12.0, horizontal: 35.0),
+                                  decoration: BoxDecoration(
+                                      color: kScaffoldBackgroundColor,
+                                      borderRadius: BorderRadius.circular(10),
+                                      boxShadow: _isElevated == true
+                                          ? [
+                                              BoxShadow(
+                                                color: Color(0xff1b1e2b),
+                                                offset: Offset(-5, -5),
+                                                blurRadius: 5,
+                                              ),
+                                              BoxShadow(
+                                                color: Color(0xff07080b),
+                                                offset: Offset(5, 5),
+                                                blurRadius: 5,
+                                              ),
+                                            ]
+                                          : null),
+                                  child: Text(
+                                    'Locate',
+                                    style: TextStyle(
+                                        color: Theme.of(context).primaryColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 15.0),
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -220,17 +246,15 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                   SizedBox(
                     height: mediaQuery.size.height * 0.08,
                   ),
-                  // StationDetailsScreenButton(
-                  //   onPressed: () {},
-                  //   text: 'BOOK',
-                  // )
                   TextButton(
                       style: TextButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
                         padding: EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 150.0),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, BookingScreen.id);
+                      },
                       child: Text(
                         'BOOK',
                         style: TextStyle(

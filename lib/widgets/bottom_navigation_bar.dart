@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../screens/home_screen.dart';
-import '../screens/booking_screen.dart';
+import '../screens/booking_list_screen.dart';
 import '../screens/dashboard_screen.dart';
 import '../screens/gallery_screen.dart';
 import '../screens/notifications_screen.dart';
@@ -17,7 +17,7 @@ class BottomNavigationState extends State<BottomNavigation> {
   int index = 2;
   final screens = [
     NotificationsScreen(),
-    BookingScreen(),
+    BookingListScreen(),
     HomeScreen(),
     DashboardScreen(),
     GalleryScreen(),

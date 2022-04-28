@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
-
-import '../utilities/constants.dart';
+import 'package:noun_customer_app/utilities/constants.dart';
+import '../widgets/container_book_pay.dart';
 
 class BookingScreen extends StatelessWidget {
   //const BookingScreen({Key? key}) : super(key: key);
+  static const id = 'booking_screen';
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kScaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-          'Bookinf Screen',
-          textAlign: TextAlign.center,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          'Booking',
+          style: TextStyle(fontSize: 20.0),
         ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            vertical: mediaQuery.height * 0.09,
+            horizontal: mediaQuery.width * 0.05),
+        child: BookAndPayContainer(),
       ),
     );
   }
