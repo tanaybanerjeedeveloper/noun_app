@@ -148,8 +148,8 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
                   style: ElevatedButton.styleFrom(
                     primary: Theme.of(context).colorScheme.secondary,
                     padding:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    elevation: 8.0,
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
+                    elevation: 20.0,
                   ),
                 )
               ],
