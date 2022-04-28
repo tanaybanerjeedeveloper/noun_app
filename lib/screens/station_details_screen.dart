@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/small_container.dart';
-import '../widgets/button.dart';
+import '../widgets/btn_screen_details.dart';
 
 class StationDetailsScreen extends StatefulWidget {
   //const StationDetailsScreen({Key? key}) : super(key: key);
@@ -196,53 +196,48 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                               ),
                               //Button('Location', () {})
                               Listener(
-                                onPointerUp: (_) =>
-                                    setState(() => _isElevated = true),
-                                onPointerDown: (_) {
-                                  setState(() {
-                                    _isElevated = false;
+                                  onPointerUp: (_) =>
+                                      setState(() => _isElevated = true),
+                                  onPointerDown: (_) {
+                                    setState(() {
+                                      _isElevated = false;
 
-                                    //_isElevated = false;
-                                  });
-                                  () {};
-                                  // Timer(const Duration(milliseconds: 10000), widget.onPressed());
-                                },
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 250),
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12.0, horizontal: 35.0),
-                                  decoration: BoxDecoration(
-                                      color: kScaffoldBackgroundColor,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: _isElevated == true
-                                          ? [
-                                              BoxShadow(
-                                                color: Color(0xff1b1e2b),
-                                                offset: Offset(-5, -5),
-                                                blurRadius: 5,
-                                              ),
-                                              BoxShadow(
-                                                color: Color(0xff07080b),
-                                                offset: Offset(5, 5),
-                                                blurRadius: 5,
-                                              ),
-                                            ]
-                                          : null),
-                                  child: Text(
-                                    'Locate',
-                                    style: TextStyle(
-                                        color: Theme.of(context).primaryColor,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 15.0),
-                                  ),
-                                ),
-                              )
+                                      //_isElevated = false;
+                                    });
+                                    () {};
+                                    // Timer(const Duration(milliseconds: 10000), widget.onPressed());
+                                  },
+                                  child: StationDetailsScreenButton(
+                                    onPressed: () {},
+                                    text: 'Locate',
+                                  ))
                             ],
                           ),
                         ),
                       )
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: mediaQuery.size.height * 0.08,
+                  ),
+                  // StationDetailsScreenButton(
+                  //   onPressed: () {},
+                  //   text: 'BOOK',
+                  // )
+                  TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).primaryColor,
+                        padding: EdgeInsets.symmetric(
+                            vertical: 15.0, horizontal: 150.0),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'BOOK',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ))
                 ],
               ),
             )
