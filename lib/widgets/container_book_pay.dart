@@ -34,7 +34,7 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
             BoxShadow(
               color: Color(0xff00ffba),
               offset: Offset(0, 0),
-              blurRadius: 10,
+              blurRadius: 15,
               spreadRadius: 0.5,
             ),
             BoxShadow(
