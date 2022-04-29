@@ -26,6 +26,8 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
 
   @override
   Widget build(BuildContext context) {
+    final hours = _convertedTime.hour.toString().padLeft(2, '0');
+    final minutes = _convertedTime.minute.toString().padLeft(2, '0');
     print('time: $_time'); //this is the current time
 
     // convertedTime = _stringToTimeOfDay(_time);
@@ -156,7 +158,7 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
                     });
                   },
                   child: Text(
-                    "${_convertedTime.hour}:${_convertedTime.minute}",
+                    "$hours:$minutes",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
