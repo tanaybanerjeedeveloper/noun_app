@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'small_container.dart';
 import 'button.dart';
+import '../screens/payment_screen.dart';
 
 class BookAndPayContainer extends StatefulWidget {
   @override
@@ -262,7 +265,10 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
             SizedBox(
               height: mediaQuery.height * 0.05,
             ),
-            Button('Book', () {}),
+            Button('Book', () {
+              Timer(const Duration(milliseconds: 500),
+                  () => Navigator.pushNamed(context, PaymentScreen.id));
+            }),
             SizedBox(
               height: mediaQuery.height * 0.05,
             ),

@@ -7,6 +7,7 @@ import './screens/home_screen.dart';
 import './widgets/bottom_navigation_bar.dart';
 import './screens/station_details_screen.dart';
 import './screens/booking_screen.dart';
+import './screens/payment_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         BottomNavigation.id: (context) => BottomNavigation(),
         StationDetailsScreen.id: (context) => StationDetailsScreen(),
         BookingScreen.id: (context) => BookingScreen(),
+        PaymentScreen.id: (context) => PaymentScreen(),
       },
       debugShowCheckedModeBanner: false,
     );
