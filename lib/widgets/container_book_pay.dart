@@ -8,10 +8,8 @@ class BookAndPayContainer extends StatefulWidget {
 }
 
 class _BookAndPayContainerState extends State<BookAndPayContainer> {
-  //const BookAndPayContainer({Key? key}) : super(key: key);
   late final _time = DateFormat.Hm().format(DateTime.now());
-  // TimeOfDay _currentTime = TimeOfDay(
-  //     hour: int.parse(_time.split(":")[0]), minute: _time.split(":")[1]);
+  late TimeOfDay _convertedTime;
 
   TimeOfDay _stringToTimeOfDay(String tod) {
     final format = DateFormat.Hm();
@@ -19,10 +17,20 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
   }
 
   @override
+  void initState() {
+    _convertedTime = _stringToTimeOfDay(_time);
+    super.initState();
+  }
+
+  // return TimeOfDay.fromDateTime(format.parse(tod));
+
+  @override
   Widget build(BuildContext context) {
     print('time: $_time'); //this is the current time
 
-    print(_stringToTimeOfDay(_time));
+    // convertedTime = _stringToTimeOfDay(_time);
+
+    print('convertedTime: $_convertedTime');
 
     final mediaQuery = MediaQuery.of(context).size;
     return Container(
@@ -137,6 +145,44 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
+                    TimeOfDay? newTime = await showTimePicker(
+                      context: context,
+                      initialTime: _convertedTime,
+                    );
+                    if (newTime == null) return;
+
+                    setState(() {
+                      _convertedTime = newTime;
+                    });
+                  },
+                  child: Text(
+                    "${_convertedTime.hour}:${_convertedTime.minute}",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Theme.of(context).colorScheme.secondary,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
+                    elevation: 20.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: mediaQuery.height * 0.01,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Date',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
                     showTimePicker(
                         context: context,
                         initialTime: _stringToTimeOfDay(_time));
@@ -151,10 +197,10 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
                         EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
                     elevation: 20.0,
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
