@@ -2,16 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import '../utilities/constants.dart';
 import 'small_container.dart';
 import 'button.dart';
 import '../screens/payment_screen.dart';
 
-class BookAndPayContainer extends StatefulWidget {
+class BookingScreenContainer extends StatefulWidget {
   @override
-  State<BookAndPayContainer> createState() => _BookAndPayContainerState();
+  State<BookingScreenContainer> createState() => _BookingScreenContainerState();
 }
 
-class _BookAndPayContainerState extends State<BookAndPayContainer> {
+class _BookingScreenContainerState extends State<BookingScreenContainer> {
   late final _time = DateFormat.Hm().format(DateTime.now());
   late final _date = DateFormat.yMd().format(DateTime.now());
   late TimeOfDay _convertedTime;
@@ -52,22 +53,7 @@ class _BookAndPayContainerState extends State<BookAndPayContainer> {
     final mediaQuery = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(vertical: mediaQuery.height * 0.02),
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0xff00ffba),
-              offset: Offset(0, 0),
-              blurRadius: 15,
-              spreadRadius: 0.5,
-            ),
-            BoxShadow(
-              color: Colors.black,
-              offset: Offset(-4, -4),
-              blurRadius: 10,
-            )
-          ]),
+      decoration: kBookAndPayContainer,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
