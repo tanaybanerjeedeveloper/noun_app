@@ -8,6 +8,7 @@ import './widgets/bottom_navigation_bar.dart';
 import './screens/station_details_screen.dart';
 import './screens/booking_screen.dart';
 import './screens/payment_screen.dart';
+import './screens/sucess_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         StationDetailsScreen.id: (context) => StationDetailsScreen(),
         BookingScreen.id: (context) => BookingScreen(),
         PaymentScreen.id: (context) => PaymentScreen(),
+        SuccessScreen.id: (context) => SuccessScreen(),
       },
       debugShowCheckedModeBanner: false,
     );

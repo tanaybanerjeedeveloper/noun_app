@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:noun_customer_app/widgets/button.dart';
 
 import '../utilities/constants.dart';
+import '../screens/sucess_screen.dart';
 
 class PaymentScreenContainer extends StatefulWidget {
   @override
@@ -177,7 +178,9 @@ class _PaymentScreenContainerState extends State<PaymentScreenContainer> {
             SizedBox(
               height: mediaQuery.height * 0.05,
             ),
-            Button('Pay', () {}),
+            Button('Pay', () {
+              Navigator.pushNamed(context, SuccessScreen.id);
+            }),
             SizedBox(
               height: mediaQuery.height * 0.05,
             ),
