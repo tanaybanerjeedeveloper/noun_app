@@ -10,13 +10,14 @@ class SuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
-              image: AssetImage('assets/images/success.gif'),
+              image: AssetImage('assets/images/done2.gif'),
+              //color: Colors.transparent,
             ),
             Text(
               'Your payment was done successfully',
