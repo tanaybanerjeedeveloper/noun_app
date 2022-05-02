@@ -23,7 +23,7 @@ class SuccessScreen extends StatelessWidget {
               'Your payment was done successfully',
               textAlign: TextAlign.center,
               style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: mediaQuery.height * 0.05,
