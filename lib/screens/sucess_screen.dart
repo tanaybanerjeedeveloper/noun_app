@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:noun_customer_app/utilities/constants.dart';
 import 'home_screen.dart';
+import '../widgets/bottom_navigation_bar.dart';
 
 class SuccessScreen extends StatelessWidget {
   //const SuccessScreen({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class SuccessScreen extends StatelessWidget {
                       EdgeInsets.symmetric(vertical: 15.0, horizontal: 150.0),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, HomeScreen.id);
+                  Navigator.pushNamed(context, BottomNavigation.id);
                 },
                 child: Text(
                   'OK',
