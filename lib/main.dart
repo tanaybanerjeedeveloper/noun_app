@@ -9,6 +9,7 @@ import './screens/station_details_screen.dart';
 import './screens/booking_screen.dart';
 import './screens/payment_screen.dart';
 import './screens/sucess_screen.dart';
+import './screens/otp_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         BookingScreen.id: (context) => BookingScreen(),
         PaymentScreen.id: (context) => PaymentScreen(),
         SuccessScreen.id: (context) => SuccessScreen(),
+        OtpScreen.id: (context) => OtpScreen(),
       },
       debugShowCheckedModeBanner: false,
     );

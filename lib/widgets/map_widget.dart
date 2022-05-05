@@ -54,6 +54,10 @@ class _MapWidgetState extends State<MapWidget> {
       height: mediaQuery.height * 0.6,
       child: MapmyIndiaMap(
         initialCameraPosition: _kInitialPosition,
+        onMapCreated: (map) {
+          mapController = map;
+          mapController.getMapmyIndiaStyle();
+        },
         onMapClick: (point, latlng) => {
           print(latlng.toString()),
           // Fluttertoast.showToast(msg: latlng.toString(), toastLength: Toast.LENGTH_LONG, gravity: ToastGravity.BOTTOM)

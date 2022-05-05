@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: kScaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: kScaffoldBackgroundColor,
+        elevation: 0,
         leading: Icon(
           Icons.gps_fixed,
           size: 15.0,

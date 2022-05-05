@@ -55,3 +55,16 @@ List checkListItems = [
     "title": "Credit/Debit Card",
   },
 ];
+
+// final otpInputDecoration = InputDecoration(
+//   contentPadding: EdgeInsets.symmetric(vertical: 15),
+//   // border: outlineInputBorder(),
+//   // focusedBorder: outlineInputBorder(),
+//   // enabledBorder: outlineInputBorder(),
+// );
+
+// OutlineInputBorder outlineInputBorder() {
+//   return OutlineInputBorder(
+//     borderRadius: BorderRadius.circular(15),
+//   );
+// }

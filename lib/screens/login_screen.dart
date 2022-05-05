@@ -6,6 +6,7 @@ import '../widgets/3rd_party_login_btn.dart';
 import '../widgets/button.dart';
 import 'home_screen.dart';
 import '../widgets/bottom_navigation_bar.dart';
+import 'otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   //LoginScreen({Key? key}) : super(key: key);
@@ -134,8 +135,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Button('LOGIN', () {
                   // Navigator.pushNamed(context, BottomNavigation.id);
+                  // Timer(const Duration(milliseconds: 500),
+                  //     () => Navigator.pushNamed(context, BottomNavigation.id));
                   Timer(const Duration(milliseconds: 500),
-                      () => Navigator.pushNamed(context, BottomNavigation.id));
+                      () => Navigator.pushNamed(context, OtpScreen.id));
                 }),
                 const SizedBox(
                   height: 35.0,
