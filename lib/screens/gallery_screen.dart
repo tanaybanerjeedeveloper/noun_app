@@ -12,6 +12,7 @@ class GalleryScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: kScaffoldBackgroundColor,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: true,
           elevation: 0,
           backgroundColor: kScaffoldBackgroundColor,

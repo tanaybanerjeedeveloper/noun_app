@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:noun_customer_app/utilities/constants.dart';
 import '../widgets/button.dart';
 import '../widgets/bottom_navigation_bar.dart';
+import './select_car_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   //OtpScreen({Key? key}) : super(key: key);
@@ -185,7 +186,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
             Button('VERIFY', () {
               Timer(const Duration(milliseconds: 500),
-                  () => Navigator.pushNamed(context, BottomNavigation.id));
+                  () => Navigator.pushNamed(context, SelectCarScreen.id));
             }),
           ],
         ),
