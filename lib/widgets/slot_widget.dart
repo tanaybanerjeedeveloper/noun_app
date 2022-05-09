@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:noun_customer_app/screens/payment_screen.dart';
+import '../screens/booking_screen.dart';
 
 class SloWidget extends StatelessWidget {
   // const SloWidget({Key? key}) : super(key: key);
@@ -31,7 +33,9 @@ class SloWidget extends StatelessWidget {
           primary: Theme.of(context).colorScheme.secondary,
           elevation: 20.0,
           padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0)),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, PaymentScreen.id);
+      },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

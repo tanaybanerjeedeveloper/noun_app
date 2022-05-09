@@ -15,7 +15,7 @@ class BookingScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          'Booking',
+          'Select Date',
           style: TextStyle(fontSize: 20.0),
         ),
         centerTitle: true,
