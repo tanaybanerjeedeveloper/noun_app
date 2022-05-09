@@ -96,6 +96,7 @@ flutter:
     - assets/images/done.gif
     - assets/images/done2.gif
     - assets/images/demo_car.png
+    - assets/images/imagesGreen.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
