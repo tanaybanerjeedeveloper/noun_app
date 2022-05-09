@@ -19,6 +19,13 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: kScaffoldBackgroundColor,
+        title: Text('Select Your Car'),
+      ),
       backgroundColor: kScaffoldBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -27,17 +34,11 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: mediaQuery.height * 0.2,
-                  child: Center(
-                      child: Text(
-                    'Select Your Car',
-                    textAlign: TextAlign.center,
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                  )),
+                  height: mediaQuery.height * 0.05,
                 ),
                 Image.asset(
                   'assets/images/demo_car.png',
+                  height: 120,
                 ),
                 SizedBox(
                   height: mediaQuery.height * 0.08,

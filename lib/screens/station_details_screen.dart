@@ -1,7 +1,12 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
+
 import '../widgets/small_container.dart';
 import 'booking_screen.dart';
+import './slot_booking_screen.dart';
 
 class StationDetailsScreen extends StatefulWidget {
   //const StationDetailsScreen({Key? key}) : super(key: key);
@@ -13,6 +18,58 @@ class StationDetailsScreen extends StatefulWidget {
 
 class _StationDetailsScreenState extends State<StationDetailsScreen> {
   var _isElevated = true;
+
+  Widget _createIOSdialog(BuildContext context) {
+    return CupertinoAlertDialog(
+      title: Text('Select Charging Option'),
+      actions: [
+        CupertinoDialogAction(
+          child: Text('Slot Booking'),
+          onPressed: () {},
+        ),
+        CupertinoDialogAction(
+          child: Text('By Charge'),
+          onPressed: () {},
+        ),
+        CupertinoDialogAction(
+          child: Text('By Price'),
+          onPressed: () {},
+        ),
+      ],
+    );
+  }
+
+  void _showSimpleDialog(BuildContext context) => showDialog(
+      context: context,
+      builder: (ctx) => SimpleDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            // backgroundColor: Colors.grey.withOpacity(0.8),
+            title: Text('Select Charging Option'),
+            children: [
+              SimpleDialogOption(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                onPressed: () {
+                  Navigator.pushNamed(context, SlotBookingScreen.id);
+                },
+                child: Text('Slot Booking'),
+              ),
+              SimpleDialogOption(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Booking By Charge'),
+              ),
+              SimpleDialogOption(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Booking By Price'),
+              )
+            ],
+          ));
 
   @override
   Widget build(BuildContext context) {
@@ -121,64 +178,6 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                               SizedBox(
                                 height: mediaQuery.size.height * 0.05,
                               ),
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 10.0, horizontal: 30.0),
-                                decoration: BoxDecoration(
-                                    color: kScaffoldBackgroundColor,
-                                    borderRadius: BorderRadius.circular(15),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color(0xff1b1e2b),
-                                        offset: Offset(-5, -5),
-                                        blurRadius: 5,
-                                      ),
-                                      BoxShadow(
-                                        color: Color(0xff07080b),
-                                        offset: Offset(5, 5),
-                                        blurRadius: 5,
-                                      ),
-                                    ]),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Costing',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          '50/Kwh',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10.0,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Slot Available',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          '5',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
                             ],
                           ),
                         ),
@@ -246,22 +245,37 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
                   SizedBox(
                     height: mediaQuery.size.height * 0.08,
                   ),
-                  TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).primaryColor,
-                        padding: EdgeInsets.symmetric(
-                            vertical: 15.0, horizontal: 150.0),
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, BookingScreen.id);
-                      },
-                      child: Text(
-                        'BOOK',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 15.0),
-                      ))
+                  Platform.isIOS
+                      ? CupertinoButton(
+                          color: Theme.of(context).primaryColor,
+                          child: Text(
+                            'BOOK',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 15.0),
+                          ),
+                          onPressed: () {
+                            showCupertinoDialog(
+                                context: context, builder: _createIOSdialog);
+                          })
+                      : TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Theme.of(context).primaryColor,
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15.0, horizontal: 150.0),
+                          ),
+                          // onPressed: () {
+                          //   Navigator.pushNamed(context, BookingScreen.id);
+                          // },
+                          onPressed: () => _showSimpleDialog(context),
+                          child: Text(
+                            'BOOK',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 15.0),
+                          ))
                 ],
               ),
             )

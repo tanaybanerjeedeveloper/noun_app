@@ -11,6 +11,7 @@ import './screens/payment_screen.dart';
 import './screens/sucess_screen.dart';
 import './screens/otp_screen.dart';
 import './screens/select_car_screen.dart';
+import './screens/slot_booking_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         SuccessScreen.id: (context) => SuccessScreen(),
         OtpScreen.id: (context) => OtpScreen(),
         SelectCarScreen.id: (context) => SelectCarScreen(),
+        SlotBookingScreen.id: (context) => SlotBookingScreen(),
       },
       debugShowCheckedModeBanner: false,
     );
