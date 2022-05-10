@@ -28,52 +28,48 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
       ),
       backgroundColor: kScaffoldBackgroundColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: mediaQuery.height * 0.05,
-                ),
-                Image.asset(
-                  'assets/images/demo_car.png',
-                  height: 120,
-                ),
-                SizedBox(
-                  height: mediaQuery.height * 0.08,
-                ),
-                DropDownWidget(
-                  dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
-                  text: 'Brand',
-                ),
-                SizedBox(
-                  height: mediaQuery.height * 0.06,
-                ),
-                DropDownWidget(
-                  dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
-                  text: 'Model',
-                ),
-                SizedBox(
-                  height: mediaQuery.height * 0.06,
-                ),
-                DropDownWidget(
-                  dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
-                  text: 'Model',
-                ),
-                SizedBox(
-                  height: mediaQuery.height * 0.09,
-                ),
-                Button('Save', () {
-                  Timer(const Duration(milliseconds: 500),
-                      () => Navigator.pushNamed(context, BottomNavigation.id));
-                }),
-                SizedBox(
-                  height: mediaQuery.height * 0.06,
-                )
-              ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // SizedBox(
+            //   height: mediaQuery.height * 0.05,
+            // ),
+            Image.asset(
+              'assets/images/demo_car.png',
+              height: 120,
             ),
-          ),
+            SizedBox(
+              height: mediaQuery.height * 0.08,
+            ),
+            DropDownWidget(
+              dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
+              text: 'Brand',
+            ),
+            SizedBox(
+              height: mediaQuery.height * 0.06,
+            ),
+            DropDownWidget(
+              dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
+              text: 'Model',
+            ),
+            SizedBox(
+              height: mediaQuery.height * 0.06,
+            ),
+            DropDownWidget(
+              dataList: ['BMW', 'Porsche', 'Audi', 'Lamborghini'],
+              text: 'Model',
+            ),
+            SizedBox(
+              height: mediaQuery.height * 0.09,
+            ),
+            Button('Save', () {
+              Timer(const Duration(milliseconds: 500),
+                  () => Navigator.pushNamed(context, BottomNavigation.id));
+            }),
+            SizedBox(
+              height: mediaQuery.height * 0.06,
+            )
+          ],
         ),
       ),
     );

@@ -1,40 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:noun_customer_app/screens/payment_screen.dart';
-import '../screens/booking_screen.dart';
+import '../screens/booking_details_screen.dart';
+// import 'package:noun_customer_app/screens/payment_screen.dart';
+// import '../screens/booking_screen.dart';
 
 class SloWidget extends StatelessWidget {
   // const SloWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //   decoration: BoxDecoration(boxShadow: [
-    //     BoxShadow(
-    //       color: Colors.black,
-    //       offset: Offset(0, 0),
-    //       blurRadius: 5,
-    //     ),
-    //   ]),
-    //   color: Theme.of(context).colorScheme.secondary,
-    //   padding: EdgeInsets.all(8.0),
-    //   child: Row(
-    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //     children: [
-    //       Text('data1'),
-    //       SizedBox(
-    //         width: 10.0,
-    //       ),
-    //       Text('data2'),
-    //     ],
-    //   ),
-    // );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           primary: Theme.of(context).colorScheme.secondary,
           elevation: 20.0,
           padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0)),
       onPressed: () {
-        Navigator.pushNamed(context, PaymentScreen.id);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => BookingDetails(
+                    date: '9/5/22',
+                    stationName: 'Lightning Bolt',
+                    time: '9:30 AM',
+                  )),
+        );
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
