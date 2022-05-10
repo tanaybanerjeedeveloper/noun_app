@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:noun_customer_app/utilities/constants.dart';
+
 import '../widgets/dropdown_widget.dart';
 import '../widgets/button.dart';
 import '../widgets/bottom_navigation_bar.dart';
@@ -28,8 +29,8 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
       ),
       backgroundColor: kScaffoldBackgroundColor,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // SizedBox(
             //   height: mediaQuery.height * 0.05,
@@ -62,10 +63,17 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
             SizedBox(
               height: mediaQuery.height * 0.09,
             ),
-            Button('Save', () {
-              Timer(const Duration(milliseconds: 500),
-                  () => Navigator.pushNamed(context, BottomNavigation.id));
-            }),
+            // Button('Save', () {
+            //   Timer(const Duration(milliseconds: 500),
+            //       () => Navigator.pushNamed(context, BottomNavigation.id));
+            // }),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 100.0),
+              child: Button('SAVE', () {
+                Timer(const Duration(milliseconds: 500),
+                    () => Navigator.pushNamed(context, BottomNavigation.id));
+              }),
+            ),
             SizedBox(
               height: mediaQuery.height * 0.06,
             )

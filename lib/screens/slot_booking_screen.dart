@@ -25,23 +25,52 @@ class _SlotBookingScreenState extends State<SlotBookingScreen> {
         backgroundColor: kScaffoldBackgroundColor,
         title: Text('Slot Booking'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(14.0),
-        child: ListView.separated(
-            // shrinkWrap: true,
-            itemBuilder: (BuildContext context, int index) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SloWidget(),
-                  SloWidget(),
-                ],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => Divider(
-                  color: Theme.of(context).primaryColor,
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: ListView.separated(
+                // shrinkWrap: true,
+                itemBuilder: (BuildContext context, int index) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SloWidget(),
+                      SloWidget(),
+                    ],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => Divider(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                itemCount: 10),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.8,
+            left: MediaQuery.of(context).size.width * 0.05,
+            right: MediaQuery.of(context).size.width * 0.05,
+            child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 15.0, horizontal: 100.0),
                 ),
-            itemCount: 10),
+                // onPressed: () {
+                //   Navigator.pushNamed(context, BookingScreen.id);
+                // },
+                onPressed: () {},
+                child: Center(
+                  child: Text(
+                    'CONTINUE',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 15.0),
+                  ),
+                )),
+          )
+        ],
       ),
     );
   }

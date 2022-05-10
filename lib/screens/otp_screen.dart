@@ -84,7 +84,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     width: 60,
                     child: TextFormField(
                       autofocus: true,
-                      obscureText: true,
+                      // obscureText: true,
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
@@ -112,7 +112,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     child: TextFormField(
                       focusNode: pin2FocusNode,
                       autofocus: true,
-                      obscureText: true,
+                      // obscureText: true,
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
@@ -138,7 +138,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     child: TextFormField(
                       focusNode: pin3FocusNode,
                       autofocus: true,
-                      obscureText: true,
+                      // obscureText: true,
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
@@ -164,7 +164,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     child: TextFormField(
                       focusNode: pin4FocusNode,
                       autofocus: true,
-                      obscureText: true,
+                      // obscureText: true,
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,

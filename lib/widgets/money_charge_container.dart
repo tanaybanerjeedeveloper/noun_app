@@ -8,12 +8,12 @@ import 'small_container.dart';
 import 'button.dart';
 import '../screens/payment_screen.dart';
 
-class BookingScreenContainer extends StatefulWidget {
+class MoneyChargeContainer extends StatefulWidget {
   @override
-  State<BookingScreenContainer> createState() => _BookingScreenContainerState();
+  State<MoneyChargeContainer> createState() => _MoneyChargeContainerState();
 }
 
-class _BookingScreenContainerState extends State<BookingScreenContainer> {
+class _MoneyChargeContainerState extends State<MoneyChargeContainer> {
   late final _time = DateFormat.Hm().format(DateTime.now());
   late final _date = DateFormat.yMd().format(DateTime.now());
   late TimeOfDay _convertedTime;
@@ -227,60 +227,60 @@ class _BookingScreenContainerState extends State<BookingScreenContainer> {
             SizedBox(
               height: mediaQuery.height * 0.001,
             ),
-            // Padding(
-            //   padding:
-            //       const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       Text('Power', style: TextStyle(fontWeight: FontWeight.bold)),
-            //       Container(
-            //         width: 150,
-            //         child: TextField(
-            //           textAlign: TextAlign.center,
-            //           onChanged: (value) {},
-            //           decoration: InputDecoration(
-            //             hintText: '10KmH',
-            //             focusedBorder: OutlineInputBorder(
-            //               borderSide: BorderSide(
-            //                 color: Theme.of(context).primaryColor,
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Power', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Container(
+                    width: 150,
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      onChanged: (value) {},
+                      decoration: InputDecoration(
+                        hintText: '10KmH',
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             SizedBox(
               height: mediaQuery.height * 0.001,
             ),
-            // Padding(
-            //   padding:
-            //       const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       Text('Power', style: TextStyle(fontWeight: FontWeight.bold)),
-            //       Container(
-            //         width: 150,
-            //         child: TextField(
-            //           textAlign: TextAlign.center,
-            //           onChanged: (value) {},
-            //           decoration: InputDecoration(
-            //             hintText: '10KmH',
-            //             focusedBorder: OutlineInputBorder(
-            //               borderSide: BorderSide(
-            //                 color: Theme.of(context).primaryColor,
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Price', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Container(
+                    width: 150,
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      onChanged: (value) {},
+                      decoration: InputDecoration(
+                        hintText: '₹ 100',
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: mediaQuery.height * 0.01,
             ),

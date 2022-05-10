@@ -7,6 +7,7 @@ import '../utilities/constants.dart';
 import '../widgets/small_container.dart';
 import 'booking_screen.dart';
 import './slot_booking_screen.dart';
+import './select_money_charge_screen.dart';
 
 class StationDetailsScreen extends StatefulWidget {
   //const StationDetailsScreen({Key? key}) : super(key: key);
@@ -57,14 +58,14 @@ class _StationDetailsScreenState extends State<StationDetailsScreen> {
               SimpleDialogOption(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, MoneyAndChargeScreen.id);
                 },
-                child: Text('Booking By Charge'),
+                child: Text('Booking By Charging'),
               ),
               SimpleDialogOption(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, BookingScreen.id);
                 },
                 child: Text('Booking By Price'),
               )
