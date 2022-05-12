@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../utilities/constants.dart';
 
+import '../widgets/booking_list_item.dart';
+
 class BookingListScreen extends StatelessWidget {
   //const BookingScreen({Key? key}) : super(key: key);
 
@@ -9,10 +11,20 @@ class BookingListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-          'Bookinf Screen',
-          textAlign: TextAlign.center,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: kScaffoldBackgroundColor,
+        title: Text('Booking List'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return BookingListItem();
+          },
+          itemCount: 5,
         ),
       ),
     );

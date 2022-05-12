@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import '../screens/booking_details_screen.dart';
+import '../screens/slot_booking_screen.dart';
 // import 'package:noun_customer_app/screens/payment_screen.dart';
 // import '../screens/booking_screen.dart';
 
 class SloWidget extends StatefulWidget {
+  final customFunction;
+  final slotTime;
+  final slotNumber;
+  SloWidget({required this.customFunction, this.slotNumber, this.slotTime});
+
   @override
   State<SloWidget> createState() => _SloWidgetState();
 }
@@ -19,23 +25,16 @@ class _SloWidgetState extends State<SloWidget> {
           elevation: 20.0,
           padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0)),
       onPressed: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //       builder: (context) => BookingDetails(
-        //             date: '9/5/22',
-        //             stationName: 'Lightning Bolt',
-        //             time: '9:30 AM',
-        //           )),
-        // );
         setState(() {
           _isPressed = !_isPressed;
         });
+        widget.customFunction(true);
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Time',
@@ -66,12 +65,27 @@ class _SloWidgetState extends State<SloWidget> {
               ),
               SizedBox(height: 10.0),
               (_isPressed == true)
-                  ? Image.asset(
-                      'assets/images/imagesRed.png',
+                  ? Flexible(
+                      fit: FlexFit.loose,
+                      child: Image.asset(
+                        'assets/images/imagesRed.png',
+                        width: 80.0,
+                        height: 50.0,
+                      ),
                     )
-                  : Image.asset(
-                      'assets/images/imagesGreen.png',
+                  : Flexible(
+                      fit: FlexFit.loose,
+                      child: Image.asset(
+                        'assets/images/imagesGreen.png',
+                        width: 80.0,
+                        height: 50.0,
+                      ),
                     )
+              // Image.asset(
+              //   'assets/images/imagesRed.png',
+              //   width: 80.0,
+              //   height: 50.0,
+              // )
             ],
           )
         ],

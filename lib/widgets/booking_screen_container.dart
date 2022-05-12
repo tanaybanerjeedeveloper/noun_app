@@ -292,8 +292,6 @@ class _BookingScreenContainerState extends State<BookingScreenContainer> {
               height: mediaQuery.height * 0.05,
             ),
             Button('Continue', () {
-              // Timer(const Duration(milliseconds: 500),
-              //     () => Navigator.pushNamed(context, PaymentScreen.id));
               Timer(const Duration(milliseconds: 500),
                   () => Navigator.pushNamed(context, SlotBookingScreen.id));
             }),

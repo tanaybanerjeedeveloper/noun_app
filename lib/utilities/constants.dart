@@ -56,15 +56,68 @@ List checkListItems = [
   },
 ];
 
-// final otpInputDecoration = InputDecoration(
-//   contentPadding: EdgeInsets.symmetric(vertical: 15),
-//   // border: outlineInputBorder(),
-//   // focusedBorder: outlineInputBorder(),
-//   // enabledBorder: outlineInputBorder(),
-// );
+var kSlots = [
+  {'id': 1, 'time': '9-9:30', 'slotNumber': '01', 'clicked': false},
+  {'id': 2, 'time': '9:30-10', 'slotNumber': '02', 'clicked': false},
+  {'id': 3, 'time': '9-9:30', 'slotNumber': '03', 'clicked': false},
+  {'id': 4, 'time': '10:30-11', 'slotNumber': '04', 'clicked': false},
+  {'id': 5, 'time': '11-11:30', 'slotNumber': '05', 'clicked': false},
+  {'id': 6, 'time': '11:30-12', 'slotNumber': '06', 'clicked': false},
+  {'id': 7, 'time': '12-12:30', 'slotNumber': '07', 'clicked': false},
+  {'id': 8, 'time': '12:30-1', 'slotNumber': '08', 'clicked': false},
+  {'id': 9, 'time': '1-1:30', 'slotNumber': '09', 'clicked': false},
+  {'id': 10, 'time': '1:30-2', 'slotNumber': '10', 'clicked': false},
+  {'id': 11, 'time': '9-9:30', 'slotNumber': '11', 'clicked': false},
+  {'id': 12, 'time': '9:30-10', 'slotNumber': '12', 'clicked': false},
+  {'id': 13, 'time': '9-9:30', 'slotNumber': '13', 'clicked': false},
+  {'id': 14, 'time': '10:30-11', 'slotNumber': '14', 'clicked': false},
+  {'id': 15, 'time': '11-11:30', 'slotNumber': '15', 'clicked': false},
+  {'id': 16, 'time': '11:30-12', 'slotNumber': '16', 'clicked': false},
+  {'id': 17, 'time': '12-12:30', 'slotNumber': '17', 'clicked': false},
+  {'id': 18, 'time': '12:30-1', 'slotNumber': '18', 'clicked': false},
+  {'id': 19, 'time': '1-1:30', 'slotNumber': '19', 'clicked': false},
+  {'id': 20, 'time': '1:30-2', 'slotNumber': '20', 'clicked': false},
+];
 
-// OutlineInputBorder outlineInputBorder() {
-//   return OutlineInputBorder(
-//     borderRadius: BorderRadius.circular(15),
-//   );
-// }
+const bookingItemList = [
+  {
+    'car_iamge': 'assets/images/lambo.png',
+    'car_name': 'Lamborghini Sian',
+    'booking_date': '2/2/2022',
+    'booking_time': '9:30 pm',
+    'power': '50KwH',
+    'price': '852',
+  },
+  {
+    'car_iamge': 'assets/images/lambo.png',
+    'car_name': 'Lamborghini Sian',
+    'booking_date': '2/2/2022',
+    'booking_time': '9:30 pm',
+    'power': '50KwH',
+    'price': '852',
+  },
+  {
+    'car_iamge': 'assets/images/lambo.png',
+    'car_name': 'Lamborghini Sian',
+    'booking_date': '2/2/2022',
+    'booking_time': '9:30 pm',
+    'power': '50KwH',
+    'price': '852',
+  },
+  {
+    'car_iamge': 'assets/images/lambo.png',
+    'car_name': 'Lamborghini Sian',
+    'booking_date': '2/2/2022',
+    'booking_time': '9:30 pm',
+    'power': '50KwH',
+    'price': '852',
+  },
+  {
+    'car_iamge': 'assets/images/lambo.png',
+    'car_name': 'Lamborghini Sian',
+    'booking_date': '2/2/2022',
+    'booking_time': '9:30 pm',
+    'power': '50KwH',
+    'price': '852',
+  }
+];
