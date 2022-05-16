@@ -144,12 +144,14 @@ class BookingListItem extends StatelessWidget {
                       SizedBox(
                         height: 6.0,
                       ),
-                      Text(
-                        '₹ 852',
-                        style: TextStyle(
+                      FittedBox(
+                        child: Text(
+                          '₹ 852',
+                          style: TextStyle(
                             color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20.0),
+                          ),
+                        ),
                       )
                     ],
                   )

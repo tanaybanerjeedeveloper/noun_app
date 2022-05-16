@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../utilities/constants.dart';
 
+import '../widgets/chart_widget.dart';
+import '../widgets/profile_widgets/personal.dart';
+
 class DashboardScreen extends StatelessWidget {
   //const DashboardScreen({Key? key}) : super(key: key);
 
@@ -9,12 +12,14 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-          'Dashboard Screen',
-          textAlign: TextAlign.center,
-        ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: kScaffoldBackgroundColor,
+        title: Text('Dashboard'),
       ),
+      body: Personal(),
     );
   }
 }
