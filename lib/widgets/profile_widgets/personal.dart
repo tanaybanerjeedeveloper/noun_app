@@ -16,7 +16,7 @@ class _PersonalState extends State<Personal> {
       child: Column(
         children: [
           SizedBox(
-            height: mediaQuery.height * 0.05,
+            height: mediaQuery.height * 0.01,
           ),
           Container(
             // color: Colors.amber,
@@ -28,7 +28,7 @@ class _PersonalState extends State<Personal> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.blue,
-                      radius: mediaQuery.width * 0.15,
+                      radius: mediaQuery.width * 0.12,
                     ),
                     Positioned(
                       bottom: 0,
@@ -62,13 +62,16 @@ class _PersonalState extends State<Personal> {
                   ],
                 ),
                 SizedBox(
-                  width: mediaQuery.width * 0.03,
+                  width: mediaQuery.width * 0.1,
                 ),
                 IconButton(
                   onPressed: () {
                     print('clicked');
                   },
-                  icon: Icon(Icons.edit),
+                  icon: Icon(
+                    Icons.edit,
+                    size: 20,
+                  ),
                 )
               ],
             ),
@@ -76,7 +79,21 @@ class _PersonalState extends State<Personal> {
           SizedBox(
             height: mediaQuery.height * 0.1,
           ),
-          Container(height: mediaQuery.height * 0.3, child: MyChartWidget())
+          Container(height: mediaQuery.height * 0.3, child: MyChartWidget()),
+          SizedBox(
+            height: mediaQuery.height * 0.1,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 0),
+            child: Row(
+              children: [
+                Text(
+                  'My Car',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

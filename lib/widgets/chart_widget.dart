@@ -74,7 +74,11 @@ class MyChartWidget extends StatelessWidget {
         ),
         borderData: FlBorderData(
           show: true,
-          border: Border.all(color: Color(0xff37434d), width: 1),
+          // border: Border.all(color: Color(0xff37434d), width: 1),
+          border: Border(
+            bottom: BorderSide(color: Color(0xff37434d), width: 1),
+            left: BorderSide(color: Color(0xff37434d), width: 1),
+          ),
         ),
         lineBarsData: [
           LineChartBarData(
